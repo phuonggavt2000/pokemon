@@ -44,18 +44,8 @@ const app = {
     const isPrevious = data.previous;
     const isNext = data.next;
 
-    if (!isPrevious) {
-      previous.classList.add("disabled");
-    }
-    if (!isNext) {
-      next.classList.add("disabled");
-    }
-    if (isPrevious) {
-      previous.classList.remove("disabled");
-    }
-    if (isNext) {
-      next.classList.remove("disabled");
-    }
+    previous.classList.toggle("disabled", !isPrevious);
+    next.classList.toggle("disabled", !isNext);
   },
 
   handleEvent: (data) => {
